@@ -150,6 +150,7 @@
 	* how can i set albedo?
 	* why are roughconductor / roughdielectric examples transparent in the documentation
 	* are roughconductor / roughdielectric the same as metal / dielectric in my testing?
+	 * roughplastic -> dielectric apparently?
 	* furnace testing 
 
 	-->
