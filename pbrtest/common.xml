@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene version="0.5.0">
+
+    <!-- path tracer integrator -->
+    <integrator type="path"/>
+
+    <!-- direct lighting integrator >
+    <integrator type="direct">
+        <integer name="shadingSamples" value="128"/>
+    </integrator-->
+
+    <sensor type="perspective">
+
+        <float name="fov" value="60"/>
+
+        <transform name="toWorld">
+            <lookat origin="-20, 0, 10" target="0, 0, 10" up="0, 1, 0"/>
+        </transform>
+
+        <!-- path tracer integrator -->
+        <sampler type="ldsampler">
+            <integer name="sampleCount" value="256"/>
+        </sampler>
+
+        <!-- direct lighting integrator >
+        <sampler type="ldsampler">
+            <integer name="sampleCount" value="4"/>
+        </sampler-->
+
+        <film type="ldrfilm">
+            <integer name="width" value="1920"/>
+            <integer name="height" value="1080"/>
+            <!--integer name="width" value="800"/>
+            <integer name="height" value="600"/-->
+            <string name="pixelFormat" value="rgb"/>
+        </film>
+    </sensor>
+
+    <!-- dielectric spheres -->
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="0" y="0" z="0"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughplastic">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.0"/> 
+            <rgb name="diffuseReflectance" value="1,1,1"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="0" y="0" z="5"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughplastic">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.0625"/>
+            <rgb name="diffuseReflectance" value="1,1,1"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="0" y="0" z="10"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughplastic">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.25"/>
+            <rgb name="diffuseReflectance" value="1,1,1"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="0" y="0" z="15"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughplastic">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.5625"/>
+            <rgb name="diffuseReflectance" value="1,1,1"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="0" y="0" z="20"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughplastic">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="1.0"/>
+            <rgb name="diffuseReflectance" value="1,1,1"/>
+        </bsdf>
+    </shape>
+
+    <!-- metallic spheres -->
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="15" y="0" z="0"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughconductor">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.0"/> 
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="15" y="0" z="5"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughconductor">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.0625"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="15" y="0" z="10"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughconductor">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.25"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="15" y="0" z="15"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughconductor">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="0.5625"/>
+        </bsdf>
+    </shape>
+
+    <shape type="sphere">
+        <transform name="toWorld">
+            <translate x="15" y="0" z="20"/>
+        </transform>
+        <float name="radius" value="1"/>
+        <bsdf type="roughconductor">
+            <string name="distribution" value="ggx"/>
+            <float name="alpha" value="1.0"/>
+        </bsdf>
+    </shape>
+
+</scene>

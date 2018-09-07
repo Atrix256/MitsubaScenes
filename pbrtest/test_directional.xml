@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<scene version="0.5.0">
+
+	<include filename="common.xml"/>
+
+	<emitter type="directional">
+		<vector name="direction" x="-0.2" y="-1.0" z="-0.5"/>
+		<rgb name="irradiance" value="2,2.5,2.5"/>
+	</emitter>
+
+</scene>
